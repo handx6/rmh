@@ -23,8 +23,8 @@ class PortfolioEntity
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
-    private ?array $category = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $category = null;
 
     public function getId(): ?int
     {
@@ -67,12 +67,12 @@ class PortfolioEntity
         return $this;
     }
 
-    public function getCategory(): array
+    public function getCategory(): ?string
     {
         return $this->category;
     }
 
-    public function setCategory(?array $category): self
+    public function setCategory(?string $category): self
     {
         $this->category = $category;
 

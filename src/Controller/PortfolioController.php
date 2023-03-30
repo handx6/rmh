@@ -4,12 +4,13 @@ namespace App\Controller;
 
 use App\Entity\PortfolioEntity;
 use App\Form\PortfolioType;
-use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PortfolioEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PortfolioController extends AbstractController
 {
@@ -20,7 +21,7 @@ function index(PortfolioEntityRepository $repo): Response
     return $this->render('portfolio/index.html.twig', compact('items'));
 }
 
-#[Route('/create', name:'app_create', methods:['GET', 'POST'])]
+#[Route('/portfolio/create', name:'app_p_create', methods:['GET', 'POST'])]
 function create(Request $request, EntityManagerInterface $em): Response
     {
     // 1 - Create new item
@@ -36,31 +37,35 @@ function create(Request $request, EntityManagerInterface $em): Response
         // stock data from user
         $newItem = $form->getData();
         // check if pics have been chosen
-        $imgPath = $form->get('url_img')->getData();
+        $imgPath = $form->get('img')->getData();
+        if ($imgPath) {
+            $array = [];
+            foreach ($imgPath as $path) {
+                $newFileName = uniqid() . '.' . $path->guessExtension();
+                try {
+                    // move picture in public/upload dir
+                    $path->move(
+                        $this->getParameter('kernel.project_dir') . '/public/upload',
+                        $newFileName
+                    );
+                } catch (FileException $e) {
+                    return new Response($e->getMessage());
+                }
+                array_push($array, $newFileName);
+            }
 
-        // if ($imgPath) {
-        //     $newFileName = uniqid() . '.' . $imgPath->guessExtension();
-        //     try {
-        //         // move picture in public/upload dir
-        //         $imgPath->move(
-        //             $this->getParameter('kernel.project_dir') . '/public/upload',
-        //             $newFileName
-        //         );
-        //     } catch (FileException $e) {
-        //         return new Response($e->getMessage());
-        //     }
-        //     // send url to db
-        //     $newPost->setUrlImg('/upload/' . $newFileName);
-        // }
+            // send urls to db
+            $newItem->setImg($array);
+        }
         // persists data from user entries
-        $em->persist($item);
+        $em->persist($newItem);
         $em->flush();
 
         // redirection
-        return $this->redirectToRoute('app_home');
+        return $this->redirectToRoute('app_portfolio');
     }
     // 3 - send form to view
-    return $this->render('blog/create.html.twig', [
+    return $this->render('portfolio/create.html.twig', [
         'showForm' => $form->createView(),
     ]);
 }
