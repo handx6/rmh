@@ -14,8 +14,8 @@ class PortfolioEntity
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $img = [];
+    #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
+    private ?array $img = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -23,8 +23,8 @@ class PortfolioEntity
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $category = [];
+    #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
+    private ?array $category = null;
 
     public function getId(): ?int
     {
