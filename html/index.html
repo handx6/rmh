@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font lato  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!-- script tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daysiUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <title>home</title>
+</head>
+<body>
+    <!-- start header & nav -->
+    <header class="bg-black  text-white h-24 px-10 py-8 flex space-x-40 justify-center font-serif">
+        <!-- logo -->
+        <a class="text-4xl text-white hover:text-opacity-70" href="">RMH CREW</a>
+        <!-- start nav -->
+        <nav class="space-x-8 px-20 text-lg">
+            <a class="text-white hover:text-purple-400" href="">Home</a>
+            <a class="text-white hover:text-purple-400" href="">Portfolio</a>
+            <a class="text-white hover:text-purple-400" href="">Devis</a>
+            <a class="text-white hover:text-purple-400" href="">Contact</a>
+            <a class="px-6 text-white hover:text-purple-400"href="">Shop<i class="fa-solid fa-cart-shopping"></i></a>
+        </nav>
+        <!-- end nav -->
+    </header>
+    <!-- end header & nav -->
+
+    <!-- section first img -->
+    <section id="hero" class="bg ">  
+        <div class="bg-black bg-opacity-60 w-full h-full ">
+            <p class="text-3xl font-semibold text-center pt-32 text-white">We are the RMH Crew, a team of three eclectic creators <br>collaborating to make disrupting art pieces </p>
+            <!-- buttons -->
+            <div class="text-center space-x-20 py-11">
+                <button class="btn glass bg-pink-600 hover:bg-pink-400" type="submit">
+                    <a class="text-white" href="">Voir plus</a>
+                </button>
+                <button class="btn glass  bg-pink-600 hover:bg-pink-400" type="submit">
+                    <a class="text-white" href="">Acheter</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- content -->
+    <main class="max-h-screen">
+        <h1 class="text-center p-10 uppercase text-2xl text-white bg-neutral-800 font-bold">Qui sommes nous?</h1>
+        <div class="flex py-10 items-center justify-center bg-neutral-800">
+            <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+                    <!-- Avatar img 1 -->
+                    <div class="h-96 w-72">
+                        <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="img/avatarRenez.png" alt="" />
+                    </div>
+                    <!-- card Avatar 1 -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                    </div>
+                    <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center   transition-all duration-500 group-hover:translate-y-0">
+                        <h1 class="font-dmserif text-3xl font-bold text-white">Renez</h1>
+                        <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Procreate Artist <br>Illustrator<br>Français</p>
+                         <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60" type="hidden"></button>
+                    </div>
+
+                </div>
+                <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+                    <div class="h-96 w-72">
+                    <!-- Avatar img 2 -->
+                        <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="img/avatarmeck.png" alt="" />
+                    </div>
+                    <!-- Card Avatar 2 -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                    </div>
+                    <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                        <h1 class="font-dmserif text-3xl font-bold text-white">Meck</h1>
+                        <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Procreate Artist <br>Illustrator<br>Français</p>
+                        <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60" type="hidden"></button>
+                    </div>
+                </div>
+                <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">                   
+                    <!-- Avatar 3 img -->
+                    <div class="h-96 w-72">
+                        <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="img/avatar-handx.png" alt="" />
+                    </div>
+                    <!--Card Avatar 3 -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                    </div>
+                    <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                        <h1 class="font-dmserif text-3xl font-bold text-white">Handx</h1>
+                        <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">CopyWriter<br>Web developer <br>Back-End</p>
+                        <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60" type="hidden"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-black h-24">
+    </footer>
+</body>
+</html>
