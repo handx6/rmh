@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font lato  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!-- script tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daysiUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <title>home</title>
+</head>
+<body>
+    <!-- start header & nav -->
+    <header class="bg-black text-white h-24 px-10 py-8 flex space-x-40 justify-center font-serif">
+        <!-- logo -->
+        <a class="text-4xl text-white hover:text-opacity-70" href="">RMH CREW</a>
+        <!-- start nav -->
+        <nav class="space-x-8 px-20 text-lg">
+            <a class="text-white hover:text-purple-400" href="">Home</a>
+            <a class="text-white hover:text-purple-400" href="">Portfolio</a>
+            <a class="text-white hover:text-purple-400" href="">Devis</a>
+            <a class="text-white hover:text-purple-400" href="">Contact</a>
+            <a class="px-6 text-white hover:text-purple-400"href="">Shop<i class="fa-solid fa-cart-shopping"></i></a>
+        </nav>
+        <!-- end nav -->
+    </header>
+    <!-- end header & nav -->
+    <!-- main portfolio -->
+    <main class="min-h-screen bg-[#E7B1DA]">
+        <div class="py-10 text-white flex flex-row items-center">
+            <div class="px-40">
+                <div class="pb-2">
+                    <a class="hover:text-green-600" href="">Personnages</a><span class="text-black pl-1">&#47</span>
+                    <a class="hover:text-green-600" href="">Graffitis</a>
+                </div>
+                <div class="pb-5">
+                    <h1 class="text-xl font-semibold text-black pb-2">Scène et personnages de Renez -Graffitis de <br> Meck</h1>
+                    <p class="text-black">Précèdent Suivant Ceux-ci sont réalisées sur Procreate dans le cadre d'un travail de collaboration <br>entre Alien et Meck.Vous aimez un design et souhaitez l'imprimer ? Contactez-nous</p>
+                </div>
+                <!-- trait -->
+                <hr class="border"></hr>
+            </div>
+            <div class="card w-96 h-96 bg-gray-300  border-white border-2 rounded-lg text-center cursor-pointer transition-all duration-500 flex items-center justify-center select-none font-bold shadow-2xl backdrop-blur-md hover:border-black hover:scale-105 active:rotate-1.7">
+                <img class="w-full h-full rounded-lg" src="img/firstP.jpg" alt="firstImg">
+            </div>
+        </div>
+        <div class="flex py-10 px-40">
+            <div class="card w-96 h-96 btn glass  border-white border-2 rounded-lg text-center cursor-pointer transition-all duration-500 flex items-center justify-center select-none font-bold shadow-2xl backdrop-blur-md hover:border-pink-400 hover:scale-105 active:rotate-1.7">
+                <img class="w-full h-full rounded-lg"src="img/carou2.png" alt="firstImg" >
+            </div>
+            <div class="px-20">
+                <div>
+                    <a class="text-white hover:text-green-600 pb-10" href="">Graffitis</a>
+                </div> 
+                <div class="">
+                    <h2 class="text-xl font-semibold text-black py-3">Graffitis by Meck & Renez</h2>
+                    <p class="py-3">Voici les Graffitis de Meck & Renez <hr class="border w-[800px]"></p>
+                </div>
+            </div>
+        </div>    
+    </main>
+    <!-- end main portfolio -->
+    <!-- footer start -->
+    <footer class="bg-black h-28 text-white text-center">
+        <div class="px-8 py-8">
+            <div class="grid gap-8 items-start justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
+                    </div>
+                    <button class="relative px-7 py-2 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
+                            <span class="flex items-center space-x-5">
+                                <span class="pr-6 text-gray-100 text-lg"
+                                    >Suivez-nous
+                                </span>
+                            </span>
+                        <span class="pl-6 text-indigo-400 group-hover:text-gray-100 transition duration-200">
+                        <a href="">
+                            <i class="fa-brands fa-instagram text-2xl "></i>
+                        </a> 
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+</body>
+</html>    
