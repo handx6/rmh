@@ -25,9 +25,11 @@ class PortfolioType extends AbstractType
                 //'mapped' => false,
                 'label' => 'Add picture (multiple selection allowed)',
                 'multiple' => true,
+                'mapped' => false,
                 'constraints' => new All([
                     new Image([
-                        'mimeTypes' => ['image/jpg', 'image/png'] 
+                        'mimeTypes' => ['image/jpg', 'image/png'],
+                        'maxSize' => '6M'
                     ])
                 ])
             ])

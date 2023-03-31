@@ -98,15 +98,9 @@ function update($id, Request $request, EntityManagerInterface $em, PortfolioEnti
     // fetch data from input
     $form->handleRequest($request);
     // submit form
-    $arrayData = [];
-    foreach ($item->getImg() as $str) {
-        array_push($arrayData, $str);
-    }
-     if ($form->isSubmitted()) {
-   // if ($form->isSubmitted() && $form->isValid()) {
-        if ($arrayData) {
-            dd($arrayData);
-        }
+    $arrayData = $item->getImg();
+   
+   if ($form->isSubmitted() && $form->isValid()) {
         // stock data from user
         $newItem = $form->getData();
         // check if pics have been chosen
@@ -123,10 +117,10 @@ function update($id, Request $request, EntityManagerInterface $em, PortfolioEnti
                     } catch (FileException $e) {
                         return new Response($e->getMessage());
                     }
-                    array_push($arrayOld, $newFileName);
+                    array_push($arrayData, $newFileName);
             }
             // send urls to db
-            $newItem->setImg($arrayOld);
+            $newItem->setImg($arrayData);
         }
         // persists data from user entries
         $em->persist($newItem);
@@ -151,11 +145,6 @@ function deleteImg($id, $name, Request $request, EntityManagerInterface $em, Por
     $item->setImg($array);
     $em->flush();
     $form = $this->createForm(PortfolioType::class, $item);
-    return $this->render('portfolio/update.html.twig', [
-    'showForm' => $form->createView(),
-    'paths' => $item->getImg(),
-    'id' => $id,
-]);
-
+    return $this->redirectToRoute('app_p_update', ['id' => $id]);
 }
 }
