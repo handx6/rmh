@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block body %}
+
+   
+    
+<div class="max-w-sm mx-auto py-12">
+    <div class="bg-white bg-opacity-30 p-20 rounded-xl border-t-2 border-l-2 border-black border-opacity-30 shadow-xl backdrop-filter backdrop-blur-lg">
+            <div class="">
+                <h1 class="uppercase text-center text-white font-black" >Devis </h1>
+            </div>
+            {% block content %}
+                {{ form_start(form, {'attr': {'novalidate':'novalidate'}}) }}
+                {{ form_row(form.client_name) }}
+                {{ form_row(form.client_email) }}
+                {{ form_row(form.demand_type) }}
+                {{ form_row(form.message) }}
+                {{ form_widget(form) }}
+            <div class="text-center pt-5">
+                <button type="submit" class="btn glass text-white">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        {% endblock %}
+    </div>
+</div>
+
+{% endblock %}

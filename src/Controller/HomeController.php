@@ -5,14 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\PostRepository;
-class PortfolioController extends AbstractController
+
+class HomeController extends AbstractController
 {
-    #[Route('/portfolio', name: 'app_portfolio')]
+    #[Route('/', name: 'app_home')]
     public function index(): Response
     {
-        return $this->render('portfolio/portfolio.html.twig', [
-            'controller_name' => 'PortfolioController',
+        return $this->render('home/home.html.twig', [
+            'controller_name' => 'HomeController',
         ]);
     }
 }
