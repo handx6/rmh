@@ -18,12 +18,26 @@
 	</style>
 
 	<div class="example-wrapper">
-		<h1>Ajouter un item</h1>
+		<h1>Modifier un item</h1>
 		<div class="max-w-sm mx-auto">
 			{{ form_start(showForm, {'attr': {'novalidate': 'novalidate'}})}}
 			{{ form_errors(showForm) }}
-			{{ form_widget(showForm)}}
-            
+			{% for item in paths %}
+				{% set path = '/upload/' ~ item %}
+				<div class="flex space-x-3">
+					<img height="100px" width="100px" src="{{ asset(path)}}" alt="">
+					<a href="{{ path('app_p_deleteimg', { 'id': id , 'name': item })}}">s
+						<i class="fa-solid fa-xmark"></i>
+					</a>
+
+				</div>
+			{% endfor %}
+			{{form_row(showForm.img)}}
+			{{form_row(showForm.title)}}
+			{{form_row(showForm.content)}}
+			{{form_row(showForm.category)}}
+
+
 			<div class="mt-5">
 				<input type="submit" value="Envoyer" class="btn btn-secondary">
 			</div>
